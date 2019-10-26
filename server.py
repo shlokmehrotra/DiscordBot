@@ -1,4 +1,5 @@
 import discord
+import math
 from discord.ext import commands
 
 bot = commands.Bot(command_prefix='$')
@@ -28,6 +29,14 @@ async def mod(ctx, a: int, b: int):
 @bot.command()
 async def multiply(ctx, a: int, b: int):
     await ctx.send(a*b)
+
+@bot.command
+async def power(ctx, a: int, b: int):
+    await ctx.send(math.pow(a, b))
+
+@bot.command()
+async def root(ctx, a: int, b: int):
+    await ctx.send(math.pow(a, (1/b)))
 
 @bot.command()
 async def greet(ctx):
