@@ -1,5 +1,4 @@
 import discord
-import math
 from discord.ext import commands
 
 bot = commands.Bot(command_prefix='$')
@@ -13,15 +12,20 @@ async def on_ready():
 async def birthday():
     if 'happy birthday' in ctx.content.lower():
         await ctx.channel.send('Happy Birthday! 🎈🎉')
+
 @bot.command()
 async def Import(ctx, a: str):
     if(a.lower() == "swapnil"):
         await ctx.send("ah shit, dont do ert")
     if(a.lower() == "kavin"):
         await ctx.send("budda why")
+    if(a.lower() == "rohitj"):
+        await ctx.send("MemoryError: cuda out of memory.")
+
 @bot.command()
 async def add(ctx, a: int, b: int):
     await ctx.send(a+b)
+
 @bot.command()
 async def mod(ctx, a: int, b: int):
     await ctx.send(a%b)
@@ -30,13 +34,13 @@ async def mod(ctx, a: int, b: int):
 async def multiply(ctx, a: int, b: int):
     await ctx.send(a*b)
 
-@bot.command
-async def power(ctx, a: int, b: int):
-    await ctx.send(math.pow(a, b))
+@bot.command()
+async def divide(ctx, a: int, b: int):
+    await ctx.send(a/b)
 
 @bot.command()
-async def root(ctx, a: int, b: int):
-    await ctx.send(math.pow(a, (1/b)))
+async def power(ctx, a: int, b: int):
+    await ctx.send(a**b)
 
 @bot.command()
 async def greet(ctx):
